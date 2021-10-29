@@ -389,7 +389,13 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteDniKeyTyped
 
     private void txtClienteNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteNomKeyReleased
-        // TODO add your handling code here:
+        if(txtClienteNom.getText().equals("")){
+            txtClienteNom.setForeground(new Color(102, 102, 102));
+        }else{
+            txtClienteNom.setText("Nombre");
+            txtClienteNom.setForeground(new Color(0, 153, 51));
+            
+        }
     }//GEN-LAST:event_txtClienteNomKeyReleased
 
     private void txtClienteNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteNomKeyTyped
@@ -397,7 +403,13 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteNomKeyTyped
 
     private void txtClienteApeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteApeKeyReleased
-        // TODO add your handling code here:
+        if(txtClienteApe.getText().equals("")){
+            txtClienteApe.setForeground(new Color(102, 102, 102));
+        }else{
+            txtClienteApe.setText("Apellido");
+            txtClienteApe.setForeground(new Color(0, 153, 51));
+            
+        }
     }//GEN-LAST:event_txtClienteApeKeyReleased
 
     private void txtClienteApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteApeKeyTyped
@@ -405,7 +417,13 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteApeKeyTyped
 
     private void txtClienteEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteEmailKeyReleased
-        // TODO add your handling code here:
+        if(txtClienteEmail.getText().equals("")){
+            txtClienteEmail.setForeground(new Color(102, 102, 102));
+        }else{
+            txtClienteEmail.setText("Email");
+            txtClienteEmail.setForeground(new Color(0, 153, 51));
+            
+        }
     }//GEN-LAST:event_txtClienteEmailKeyReleased
 
     private void txtClienteEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteEmailKeyTyped
@@ -413,7 +431,13 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteEmailKeyTyped
 
     private void txtClienteTelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteTelKeyReleased
-        // TODO add your handling code here:
+        if(txtClienteTel.getText().equals("")){
+            txtClienteTel.setForeground(new Color(102, 102, 102));
+        }else{
+            txtClienteTel.setText("Teléfono");
+            txtClienteTel.setForeground(new Color(0, 153, 51));
+            
+        }
     }//GEN-LAST:event_txtClienteTelKeyReleased
 
     private void txtClienteTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteTelKeyTyped
@@ -421,7 +445,13 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteTelKeyTyped
 
     private void txtClienteDirKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteDirKeyReleased
-        // TODO add your handling code here:
+        if(txtClienteDir.getText().equals("")){
+            txtClienteDir.setForeground(new Color(102, 102, 102));
+        }else{
+            txtClienteDir.setText("Dirección");
+            txtClienteDir.setForeground(new Color(0, 153, 51));
+            
+        }
     }//GEN-LAST:event_txtClienteDirKeyReleased
 
     private void txtClienteDirKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteDirKeyTyped
