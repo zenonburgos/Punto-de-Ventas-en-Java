@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Library;
+package ViewModels;
 
 /**
  *
  * @author USER
  */
-public class Objetos {
-    public static UploadImage uploadImage = new UploadImage();
-    public static TexFieldEvent eventos = new TexFieldEvent();
+public class ClientesVM {
+    
 }

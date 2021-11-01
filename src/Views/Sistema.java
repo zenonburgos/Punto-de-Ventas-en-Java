@@ -6,6 +6,7 @@
 package Views;
 
 import Library.Objetos;
+import ViewModels.ClientesVM;
 import java.awt.Color;
 
 /**
@@ -149,6 +150,7 @@ public class Sistema extends javax.swing.JFrame {
 
         pnlFotoCliente.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblFotoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_user_127px.png"))); // NOI18N
         lblFotoCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         lblFotoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblFotoCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,18 +165,18 @@ public class Sistema extends javax.swing.JFrame {
             pnlFotoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFotoClienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(lblFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlFotoClienteLayout.setVerticalGroup(
             pnlFotoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFotoClienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFotoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(lblFotoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 128, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 28, -1, -1));
+        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 150, -1));
 
         lblClienteDni.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteDni.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -366,6 +368,7 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">
+    private ClientesVM cliente;
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         tpnlPrincipal.setSelectedIndex(1);
     }//GEN-LAST:event_btnClientesActionPerformed
@@ -385,43 +388,43 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteDniKeyReleased
 
     private void txtClienteDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteDniKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.numberKeyPress(evt);
     }//GEN-LAST:event_txtClienteDniKeyTyped
 
     private void txtClienteNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteNomKeyReleased
         if(txtClienteNom.getText().equals("")){
-            txtClienteNom.setForeground(new Color(102, 102, 102));
+            lblClienteNom.setForeground(new Color(102, 102, 102));
         }else{
-            txtClienteNom.setText("Nombre");
-            txtClienteNom.setForeground(new Color(0, 153, 51));
+            lblClienteNom.setText("Nombre");
+            lblClienteNom.setForeground(new Color(0, 153, 51));
             
         }
     }//GEN-LAST:event_txtClienteNomKeyReleased
 
     private void txtClienteNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteNomKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.textKeyPress(evt);
     }//GEN-LAST:event_txtClienteNomKeyTyped
 
     private void txtClienteApeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteApeKeyReleased
         if(txtClienteApe.getText().equals("")){
-            txtClienteApe.setForeground(new Color(102, 102, 102));
+            lblClienteApe.setForeground(new Color(102, 102, 102));
         }else{
-            txtClienteApe.setText("Apellido");
-            txtClienteApe.setForeground(new Color(0, 153, 51));
+            lblClienteApe.setText("Apellido");
+            lblClienteApe.setForeground(new Color(0, 153, 51));
             
         }
     }//GEN-LAST:event_txtClienteApeKeyReleased
 
     private void txtClienteApeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteApeKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.textKeyPress(evt);
     }//GEN-LAST:event_txtClienteApeKeyTyped
 
     private void txtClienteEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteEmailKeyReleased
         if(txtClienteEmail.getText().equals("")){
-            txtClienteEmail.setForeground(new Color(102, 102, 102));
+            lblClienteEmail.setForeground(new Color(102, 102, 102));
         }else{
-            txtClienteEmail.setText("Email");
-            txtClienteEmail.setForeground(new Color(0, 153, 51));
+            lblClienteEmail.setText("Email");
+            lblClienteEmail.setForeground(new Color(0, 153, 51));
             
         }
     }//GEN-LAST:event_txtClienteEmailKeyReleased
@@ -432,24 +435,24 @@ public class Sistema extends javax.swing.JFrame {
 
     private void txtClienteTelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteTelKeyReleased
         if(txtClienteTel.getText().equals("")){
-            txtClienteTel.setForeground(new Color(102, 102, 102));
+            lblClienteTel.setForeground(new Color(102, 102, 102));
         }else{
-            txtClienteTel.setText("Teléfono");
-            txtClienteTel.setForeground(new Color(0, 153, 51));
+            lblClienteTel.setText("Teléfono");
+            lblClienteTel.setForeground(new Color(0, 153, 51));
             
         }
     }//GEN-LAST:event_txtClienteTelKeyReleased
 
     private void txtClienteTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteTelKeyTyped
-        // TODO add your handling code here:
+        Objetos.eventos.numberKeyPress(evt);
     }//GEN-LAST:event_txtClienteTelKeyTyped
 
     private void txtClienteDirKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteDirKeyReleased
         if(txtClienteDir.getText().equals("")){
-            txtClienteDir.setForeground(new Color(102, 102, 102));
+            lblClienteDir.setForeground(new Color(102, 102, 102));
         }else{
-            txtClienteDir.setText("Dirección");
-            txtClienteDir.setForeground(new Color(0, 153, 51));
+            lblClienteDir.setText("Dirección");
+            lblClienteDir.setForeground(new Color(0, 153, 51));
             
         }
     }//GEN-LAST:event_txtClienteDirKeyReleased
