@@ -8,6 +8,9 @@ package Views;
 import Library.Objetos;
 import ViewModels.ClientesVM;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -370,6 +373,25 @@ public class Sistema extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="CODIGO DE CLIENTE">
     private ClientesVM cliente;
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        
+        ArrayList<JLabel> label = new ArrayList();
+        label.add(lblClienteDni);
+        label.add(lblClienteNom);
+        label.add(lblClienteApe);
+        label.add(lblClienteEmail);
+        label.add(lblClienteTel);
+        label.add(lblClienteDir);
+        
+        ArrayList<JTextField> textField = new ArrayList();
+        textField.add(txtClienteDni);
+        textField.add(txtClienteNom);
+        textField.add(txtClienteApe);
+        textField.add(txtClienteEmail);
+        textField.add(txtClienteTel);
+        textField.add(txtClienteDir);
+        Object[] objects = {};
+        cliente = new ClientesVM(objects, label, textField);
+        
         tpnlPrincipal.setSelectedIndex(1);
     }//GEN-LAST:event_btnClientesActionPerformed
 
