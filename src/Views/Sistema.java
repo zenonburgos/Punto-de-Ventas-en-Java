@@ -155,7 +155,7 @@ public class Sistema extends javax.swing.JFrame {
 
         lblFotoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_user_127px.png"))); // NOI18N
         lblFotoCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        lblFotoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFotoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblFotoCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblFotoClienteMouseClicked(evt);
@@ -285,12 +285,22 @@ public class Sistema extends javax.swing.JFrame {
 
         txtClienteCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_cancel_24px_1.png"))); // NOI18N
         txtClienteCancel.setText("Cancelar");
-        txtClienteCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtClienteCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtClienteCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClienteCancelActionPerformed(evt);
+            }
+        });
         jPanel6.add(txtClienteCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, 30));
 
         btnClienteAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_plus_+_24px.png"))); // NOI18N
         btnClienteAdd.setText("Agregar");
-        btnClienteAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClienteAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClienteAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClienteAddActionPerformed(evt);
+            }
+        });
         jPanel6.add(btnClienteAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, 30));
 
         jTabbedPane2.addTab("Registro de clientes", jPanel6);
@@ -340,7 +350,7 @@ public class Sistema extends javax.swing.JFrame {
 
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
         btnClientes.setText("Clientes");
-        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientesActionPerformed(evt);
@@ -354,8 +364,9 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tpnlPrincipal)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(btnClientes)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,6 +493,14 @@ public class Sistema extends javax.swing.JFrame {
     private void txtClienteDirKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteDirKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteDirKeyTyped
+
+    private void btnClienteAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteAddActionPerformed
+        cliente.RegistrarCliente();
+    }//GEN-LAST:event_btnClienteAddActionPerformed
+
+    private void txtClienteCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteCancelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClienteCancelActionPerformed
     
     // </editor-fold>
     

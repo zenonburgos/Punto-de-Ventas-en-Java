@@ -6,6 +6,8 @@
 package Library;
 
 import java.awt.event.KeyEvent;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -27,5 +29,11 @@ public class TexFieldEvent {
          if((car < '0' || car > '9') &&     (car != (char) KeyEvent.VK_BACK_SPACE)){
             evt.consume();
         }
+    }
+    
+    public boolean isEmail(String correo){
+        Pattern pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\.[\\w\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        Matcher mat = pat.matcher(correo);
+        return mat.find();
     }
 }
