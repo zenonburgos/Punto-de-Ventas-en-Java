@@ -5,6 +5,7 @@
  */
 package ViewModels;
 
+import Conexion.Conexion;
 import Library.Objetos;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class ClientesVM {
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
         _textField = textField;
+        new Conexion();
     }
     public void RegistrarCliente(){
         if(_textField.get(0).getText().equals("")){
