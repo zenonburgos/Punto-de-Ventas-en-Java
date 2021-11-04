@@ -62,6 +62,7 @@ public class Sistema extends javax.swing.JFrame {
         txtClienteDir = new javax.swing.JTextField();
         txtClienteCancel = new javax.swing.JButton();
         btnClienteAdd = new javax.swing.JButton();
+        CheckBoxCliente_Credito = new javax.swing.JCheckBox();
         jPanel7 = new javax.swing.JPanel();
         btnClientes = new javax.swing.JButton();
 
@@ -149,7 +150,7 @@ public class Sistema extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Información cliente");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 355, -1));
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 130, -1));
 
         pnlFotoCliente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -179,7 +180,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 150, -1));
+        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 150, -1));
 
         lblClienteDni.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteDni.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -303,6 +304,9 @@ public class Sistema extends javax.swing.JFrame {
         });
         jPanel6.add(btnClienteAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, 30));
 
+        CheckBoxCliente_Credito.setText("Crédito");
+        jPanel6.add(CheckBoxCliente_Credito, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+
         jTabbedPane2.addTab("Registro de clientes", jPanel6);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -392,6 +396,7 @@ public class Sistema extends javax.swing.JFrame {
         label.add(lblClienteEmail);
         label.add(lblClienteTel);
         label.add(lblClienteDir);
+        label.add(lblFotoCliente);
         
         ArrayList<JTextField> textField = new ArrayList();
         textField.add(txtClienteDni);
@@ -400,7 +405,7 @@ public class Sistema extends javax.swing.JFrame {
         textField.add(txtClienteEmail);
         textField.add(txtClienteTel);
         textField.add(txtClienteDir);
-        Object[] objects = {};
+        Object[] objects = {CheckBoxCliente_Credito};
         cliente = new ClientesVM(objects, label, textField);
         
         tpnlPrincipal.setSelectedIndex(1);
@@ -499,7 +504,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClienteAddActionPerformed
 
     private void txtClienteCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteCancelActionPerformed
-        // TODO add your handling code here:
+        cliente.restablecer();
     }//GEN-LAST:event_txtClienteCancelActionPerformed
     
     // </editor-fold>
@@ -540,6 +545,7 @@ public class Sistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JButton btnClienteAdd;
     private javax.swing.JButton btnClientes;
     private javax.swing.JLabel jLabel1;
