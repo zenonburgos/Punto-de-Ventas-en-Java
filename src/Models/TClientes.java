@@ -19,7 +19,7 @@ public class TClientes {
     private String Telefono;
     private String Fecha;
     private boolean Credito;
-    private byte [] Imagen;
+    private byte[] Imagen;
 
     public TClientes() {
     }   

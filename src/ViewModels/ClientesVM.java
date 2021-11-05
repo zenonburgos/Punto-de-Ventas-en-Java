@@ -181,6 +181,6 @@ public class ClientesVM extends Consult{
         _label.get(4).setForeground(new Color(102, 102, 102));
         _label.get(5).setText("Direccion");
         _label.get(5).setForeground(new Color(102, 102, 102));
-        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader().getResource("Resources/logo/icons8_user_120px")));
+        _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader().getResource("Resources/icons8_user_127px.png")));
     }
 }

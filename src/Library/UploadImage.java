@@ -33,8 +33,6 @@ public class UploadImage extends javax.swing.JFrame{
         return imageByte;
     }
     
-    
-    
     public void CargarImagen(JLabel label){
         abrirArchivo = new JFileChooser();
         abrirArchivo.setFileFilter(new FileNameExtensionFilter("Archivos de imagen", "jpg", "jpeg", "png", "gif"));
@@ -45,7 +43,9 @@ public class UploadImage extends javax.swing.JFrame{
             Image foto = getToolkit().getImage(urlOrigen);
             foto = foto.getScaledInstance(140, 140, 1);
             label.setIcon(new ImageIcon(foto));
+            //imageByte = new byte[(int) archivo.length()];
             try {
+                
                 BufferedImage bImage = ImageIO.read(archivo);
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ImageIO.write(bImage, "png", bos);
@@ -53,6 +53,15 @@ public class UploadImage extends javax.swing.JFrame{
             } catch (IOException ex) {
                 
             }
+            
+            //            try {
+//                BufferedImage bImage = ImageIO.read(archivo);
+//                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+//                ImageIO.write(bImage, "png", bos);
+//                imageByte = bos.toByteArray();
+//            } catch (IOException ex) {
+//                
+//            }
         }
     }
     

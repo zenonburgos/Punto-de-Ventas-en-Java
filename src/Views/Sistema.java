@@ -56,14 +56,25 @@ public class Sistema extends javax.swing.JFrame {
         txtClienteApe = new javax.swing.JTextField();
         lblClienteEmail = new javax.swing.JLabel();
         txtClienteEmail = new javax.swing.JTextField();
-        lblClienteTel = new javax.swing.JLabel();
         lblClienteDir = new javax.swing.JLabel();
         txtClienteTel = new javax.swing.JTextField();
         txtClienteDir = new javax.swing.JTextField();
-        txtClienteCancel = new javax.swing.JButton();
-        btnClienteAdd = new javax.swing.JButton();
         CheckBoxCliente_Credito = new javax.swing.JCheckBox();
+        lblClienteTel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        btnClienteAdd = new javax.swing.JButton();
+        txtClienteCancel = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        lblClienteTel = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        btnClientes1 = new javax.swing.JButton();
+        lblClienteTel2 = new javax.swing.JLabel();
+        btnClientes2 = new javax.swing.JButton();
+        btnClientes3 = new javax.swing.JButton();
+        btnClientes4 = new javax.swing.JButton();
         btnClientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,11 +102,11 @@ public class Sistema extends javax.swing.JFrame {
         pnlVentas.setLayout(pnlVentasLayout);
         pnlVentasLayout.setHorizontalGroup(
             pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 1103, Short.MAX_VALUE)
         );
         pnlVentasLayout.setVerticalGroup(
             pnlVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addGap(0, 477, Short.MAX_VALUE)
         );
 
         tpnlPrincipal.addTab("Ventas", pnlVentas);
@@ -126,7 +137,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +161,7 @@ public class Sistema extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Información cliente");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 130, -1));
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 350, -1));
 
         pnlFotoCliente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -180,13 +191,13 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 150, -1));
+        jPanel6.add(pnlFotoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 150, -1));
 
         lblClienteDni.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteDni.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblClienteDni.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteDni.setText("DNI");
-        jPanel6.add(lblClienteDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 168, -1, -1));
+        jPanel6.add(lblClienteDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         txtClienteDni.setToolTipText("");
         txtClienteDni.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -197,13 +208,13 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteDniKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 191, 158, -1));
+        jPanel6.add(txtClienteDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, -1));
 
         lblClienteNom.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteNom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblClienteNom.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteNom.setText("Nombre");
-        jPanel6.add(lblClienteNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 168, -1, -1));
+        jPanel6.add(lblClienteNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         txtClienteNom.setToolTipText("");
         txtClienteNom.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -214,13 +225,13 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteNomKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 191, 158, -1));
+        jPanel6.add(txtClienteNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 190, -1));
 
         lblClienteApe.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteApe.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblClienteApe.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteApe.setText("Apellidos");
-        jPanel6.add(lblClienteApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 217, -1, -1));
+        jPanel6.add(lblClienteApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         txtClienteApe.setToolTipText("");
         txtClienteApe.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -231,13 +242,13 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteApeKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 158, -1));
+        jPanel6.add(txtClienteApe, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 190, -1));
 
         lblClienteEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblClienteEmail.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteEmail.setText("Email");
-        jPanel6.add(lblClienteEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 217, -1, -1));
+        jPanel6.add(lblClienteEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         txtClienteEmail.setToolTipText("");
         txtClienteEmail.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -248,19 +259,13 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteEmailKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 240, 158, -1));
-
-        lblClienteTel.setBackground(new java.awt.Color(255, 255, 255));
-        lblClienteTel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblClienteTel.setForeground(new java.awt.Color(102, 102, 102));
-        lblClienteTel.setText("Teléfono");
-        jPanel6.add(lblClienteTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 266, -1, -1));
+        jPanel6.add(txtClienteEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 158, -1));
 
         lblClienteDir.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteDir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblClienteDir.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteDir.setText("Dirección");
-        jPanel6.add(lblClienteDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 266, -1, -1));
+        jPanel6.add(lblClienteDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         txtClienteTel.setToolTipText("");
         txtClienteTel.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -271,7 +276,7 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteTelKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 289, 158, -1));
+        jPanel6.add(txtClienteTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 160, -1));
 
         txtClienteDir.setToolTipText("");
         txtClienteDir.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -282,17 +287,33 @@ public class Sistema extends javax.swing.JFrame {
                 txtClienteDirKeyTyped(evt);
             }
         });
-        jPanel6.add(txtClienteDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 289, 158, -1));
+        jPanel6.add(txtClienteDir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 330, -1));
 
-        txtClienteCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_cancel_24px_1.png"))); // NOI18N
-        txtClienteCancel.setText("Cancelar");
-        txtClienteCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        txtClienteCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteCancelActionPerformed(evt);
-            }
-        });
-        jPanel6.add(txtClienteCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, 30));
+        CheckBoxCliente_Credito.setText("Crédito");
+        jPanel6.add(CheckBoxCliente_Credito, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
+
+        lblClienteTel1.setBackground(new java.awt.Color(255, 255, 255));
+        lblClienteTel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblClienteTel1.setForeground(new java.awt.Color(102, 102, 102));
+        lblClienteTel1.setText("Teléfono");
+        jPanel6.add(lblClienteTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
+
+        jTabbedPane2.addTab("Registro de clientes", jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 360, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 338, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Pagos", jPanel7);
 
         btnClienteAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_plus_+_24px.png"))); // NOI18N
         btnClienteAdd.setText("Agregar");
@@ -302,35 +323,154 @@ public class Sistema extends javax.swing.JFrame {
                 btnClienteAddActionPerformed(evt);
             }
         });
-        jPanel6.add(btnClienteAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, 30));
 
-        CheckBoxCliente_Credito.setText("Crédito");
-        jPanel6.add(CheckBoxCliente_Credito, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
-
-        jTabbedPane2.addTab("Registro de clientes", jPanel6);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 357, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Pagos", jPanel7);
+        txtClienteCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_cancel_24px_1.png"))); // NOI18N
+        txtClienteCancel.setText("Cancelar");
+        txtClienteCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtClienteCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtClienteCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane2)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(btnClienteAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtClienteCancel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClienteAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClienteCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 719, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 338, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Lista de Clientes", jPanel3);
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 719, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 338, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Pagos y Reportes", jPanel8);
+
+        lblClienteTel.setBackground(new java.awt.Color(255, 255, 255));
+        lblClienteTel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblClienteTel.setForeground(new java.awt.Color(102, 102, 102));
+        lblClienteTel.setText("Registros por páginas");
+
+        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
+        btnClientes1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientes1ActionPerformed(evt);
+            }
+        });
+
+        lblClienteTel2.setBackground(new java.awt.Color(255, 255, 255));
+        lblClienteTel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblClienteTel2.setForeground(new java.awt.Color(102, 102, 102));
+        lblClienteTel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClienteTel2.setText("Páginas");
+
+        btnClientes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
+        btnClientes2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClientes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientes2ActionPerformed(evt);
+            }
+        });
+
+        btnClientes3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
+        btnClientes3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClientes3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientes3ActionPerformed(evt);
+            }
+        });
+
+        btnClientes4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
+        btnClientes4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnClientes4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientes4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblClienteTel)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClientes3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClientes4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblClienteTel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClienteTel)
+                    .addComponent(lblClienteTel2))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnClientes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClientes3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClientes4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
         javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
@@ -340,20 +480,22 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlClientesLayout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlClientesLayout.setVerticalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlClientesLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         tpnlPrincipal.addTab("Clientes", pnlClientes);
 
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_users_28px.png"))); // NOI18N
-        btnClientes.setText("Clientes");
         btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -506,6 +648,22 @@ public class Sistema extends javax.swing.JFrame {
     private void txtClienteCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteCancelActionPerformed
         cliente.restablecer();
     }//GEN-LAST:event_txtClienteCancelActionPerformed
+
+    private void btnClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientes1ActionPerformed
+
+    private void btnClientes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientes2ActionPerformed
+
+    private void btnClientes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientes3ActionPerformed
+
+    private void btnClientes4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientes4ActionPerformed
     
     // </editor-fold>
     
@@ -548,14 +706,23 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JButton btnClienteAdd;
     private javax.swing.JButton btnClientes;
+    private javax.swing.JButton btnClientes1;
+    private javax.swing.JButton btnClientes2;
+    private javax.swing.JButton btnClientes3;
+    private javax.swing.JButton btnClientes4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblClienteApe;
@@ -564,6 +731,8 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblClienteEmail;
     private javax.swing.JLabel lblClienteNom;
     private javax.swing.JLabel lblClienteTel;
+    private javax.swing.JLabel lblClienteTel1;
+    private javax.swing.JLabel lblClienteTel2;
     private javax.swing.JLabel lblFotoCliente;
     private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlFotoCliente;
