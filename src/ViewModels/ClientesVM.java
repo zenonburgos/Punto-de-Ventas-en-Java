@@ -19,7 +19,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
 
@@ -32,12 +34,18 @@ public class ClientesVM extends Consult{
     private String _accion = "insert";
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
-    private JCheckBox _checkBoxCredito;
+    private final JCheckBox _checkBoxCredito;
+    private final JTable _tableCliente;
+    private DefaultTableModel modelo1;
+    private int _idCliente = 0;
+    private int _reg_por_pagina = 10, _num_pagina = 1;
 
     public ClientesVM(Object[] objects, ArrayList<JLabel> label, ArrayList<JTextField> textField) {
         _label = label;
         _textField = textField;
         _checkBoxCredito = (JCheckBox) objects[0];
+        _tableCliente = (JTable) objects[1];
+        _restablecer();
     }
     public void RegistrarCliente(){
         if(_textField.get(0).getText().equals("")){
@@ -158,6 +166,50 @@ public class ClientesVM extends Consult{
             JOptionPane.showMessageDialog(null, ex);
         }
     }
+    
+    public void SearchClientes(String campo){
+        List<TClientes> clienteFilter;
+        String[] titulos = {"Id", "Nid", "Nombre", "Apellido", "Email", "Direccion", "Telefono", "Credito", "Image"};
+        modelo1 = new DefaultTableModel(null, titulos);
+        int inicio = (_num_pagina - 1) * _reg_por_pagina;
+        if(campo.equals("")){
+            clienteFilter = clientes().stream()
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        }else{
+            clienteFilter = clientes().stream()
+                    .filter(C -> C.getNid().startsWith(campo) || C.getNombre().startsWith(campo)
+                    || C.getApellido().startsWith(campo))
+                    .skip(inicio).limit(_reg_por_pagina)
+                    .collect(Collectors.toList());
+        }
+        if(!clienteFilter.isEmpty()) {
+            clienteFilter.forEach(item->{
+                Object[] registros = {
+                    item.getID(),
+                    item.getNid(),
+                    item.getNombre(),
+                    item.getApellido(),
+                    item.getEmail(),
+                    item.getDireccion(),
+                    item.getTelefono(),
+                    item.isCredito(),
+                    item.getImagen()
+                };
+                modelo1.addRow(registros);
+            });
+        }
+        
+        _tableCliente.setModel(modelo1);
+        _tableCliente.setRowHeight(30);
+        _tableCliente.getColumnModel().getColumn(0).setMaxWidth(0);
+        _tableCliente.getColumnModel().getColumn(0).setMinWidth(0);
+        _tableCliente.getColumnModel().getColumn(0).setPreferredWidth(0);
+        _tableCliente.getColumnModel().getColumn(8).setMaxWidth(0);
+        _tableCliente.getColumnModel().getColumn(8).setMinWidth(0);
+        _tableCliente.getColumnModel().getColumn(8).setPreferredWidth(0);
+    }
+    
     public final void restablecer(){
         _accion = "insert";
         _textField.get(0).setText("");
@@ -182,5 +234,6 @@ public class ClientesVM extends Consult{
         _label.get(5).setText("Direccion");
         _label.get(5).setForeground(new Color(102, 102, 102));
         _label.get(6).setIcon(new ImageIcon(getClass().getClassLoader().getResource("Resources/icons8_user_127px.png")));
+        SearchClientes("");
     }
 }
