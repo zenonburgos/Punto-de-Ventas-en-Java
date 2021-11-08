@@ -45,7 +45,7 @@ public class ClientesVM extends Consult{
         _textField = textField;
         _checkBoxCredito = (JCheckBox) objects[0];
         _tableCliente = (JTable) objects[1];
-        _restablecer();
+        restablecer();
     }
     public void RegistrarCliente(){
         if(_textField.get(0).getText().equals("")){
