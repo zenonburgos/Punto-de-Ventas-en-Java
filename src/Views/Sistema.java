@@ -75,12 +75,12 @@ public class Sistema extends javax.swing.JFrame {
         };
         jPanel8 = new javax.swing.JPanel();
         lblClienteTel = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        btnClientes1 = new javax.swing.JButton();
-        lblClienteTel2 = new javax.swing.JLabel();
-        btnClientes2 = new javax.swing.JButton();
-        btnClientes3 = new javax.swing.JButton();
-        btnClientes4 = new javax.swing.JButton();
+        spnClientes_Paginas = new javax.swing.JSpinner();
+        btnCliente_First = new javax.swing.JButton();
+        labelCliente_Paginas = new javax.swing.JLabel();
+        btnCliente_Prev = new javax.swing.JButton();
+        btnCliente_Next = new javax.swing.JButton();
+        btnCliente_Last = new javax.swing.JButton();
         btnClientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -378,6 +378,16 @@ public class Sistema extends javax.swing.JFrame {
 
             }
         ));
+        tableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClientesMouseClicked(evt);
+            }
+        });
+        tableClientes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tableClientesKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableClientes);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -413,41 +423,47 @@ public class Sistema extends javax.swing.JFrame {
         lblClienteTel.setForeground(new java.awt.Color(102, 102, 102));
         lblClienteTel.setText("Registros por páginas");
 
-        btnClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_double_left_20px_3.png"))); // NOI18N
-        btnClientes1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnClientes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientes1ActionPerformed(evt);
+        spnClientes_Paginas.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnClientes_PaginasStateChanged(evt);
             }
         });
 
-        lblClienteTel2.setBackground(new java.awt.Color(255, 255, 255));
-        lblClienteTel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblClienteTel2.setForeground(new java.awt.Color(102, 102, 102));
-        lblClienteTel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblClienteTel2.setText("Páginas");
-
-        btnClientes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_back_20px.png"))); // NOI18N
-        btnClientes2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnClientes2.addActionListener(new java.awt.event.ActionListener() {
+        btnCliente_First.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_double_left_20px_3.png"))); // NOI18N
+        btnCliente_First.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente_First.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientes2ActionPerformed(evt);
+                btnCliente_FirstActionPerformed(evt);
             }
         });
 
-        btnClientes3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_forward_20px.png"))); // NOI18N
-        btnClientes3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnClientes3.addActionListener(new java.awt.event.ActionListener() {
+        labelCliente_Paginas.setBackground(new java.awt.Color(255, 255, 255));
+        labelCliente_Paginas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelCliente_Paginas.setForeground(new java.awt.Color(102, 102, 102));
+        labelCliente_Paginas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelCliente_Paginas.setText("Páginas");
+
+        btnCliente_Prev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_back_20px.png"))); // NOI18N
+        btnCliente_Prev.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente_Prev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientes3ActionPerformed(evt);
+                btnCliente_PrevActionPerformed(evt);
             }
         });
 
-        btnClientes4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_double_right_20px_5.png"))); // NOI18N
-        btnClientes4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnClientes4.addActionListener(new java.awt.event.ActionListener() {
+        btnCliente_Next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_forward_20px.png"))); // NOI18N
+        btnCliente_Next.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente_Next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClientes4ActionPerformed(evt);
+                btnCliente_NextActionPerformed(evt);
+            }
+        });
+
+        btnCliente_Last.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_double_right_20px_5.png"))); // NOI18N
+        btnCliente_Last.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCliente_Last.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCliente_LastActionPerformed(evt);
             }
         });
 
@@ -460,18 +476,18 @@ public class Sistema extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblClienteTel)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnClientes_Paginas, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(99, 99, 99)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCliente_First, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClientes2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCliente_Prev, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClientes3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCliente_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClientes4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblClienteTel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCliente_Last, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelCliente_Paginas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -481,21 +497,15 @@ public class Sistema extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblClienteTel)
-                    .addComponent(lblClienteTel2))
+                    .addComponent(labelCliente_Paginas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnClientes3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnClientes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClientes4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnCliente_Next, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCliente_Prev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCliente_Last, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnCliente_First, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spnClientes_Paginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(3, 3, 3))
         );
 
@@ -516,7 +526,7 @@ public class Sistema extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -566,7 +576,7 @@ public class Sistema extends javax.swing.JFrame {
         label.add(lblClienteTel);
         label.add(lblClienteDir);
         label.add(lblFotoCliente);
-        
+        label.add(labelCliente_Paginas);        
         ArrayList<JTextField> textField = new ArrayList();
         textField.add(txtClienteDni);
         textField.add(txtClienteNom);
@@ -576,7 +586,8 @@ public class Sistema extends javax.swing.JFrame {
         textField.add(txtClienteDir);
         Object[] objects = {
             CheckBoxCliente_Credito,
-            tableClientes
+            tableClientes,
+            spnClientes_Paginas
         };
         cliente = new ClientesVM(objects, label, textField);
         
@@ -679,21 +690,37 @@ public class Sistema extends javax.swing.JFrame {
         cliente.restablecer();
     }//GEN-LAST:event_txtClienteCancelActionPerformed
 
-    private void btnClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnClientes1ActionPerformed
+    private void btnCliente_FirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliente_FirstActionPerformed
+        cliente.Paginador("Primero");
+    }//GEN-LAST:event_btnCliente_FirstActionPerformed
 
-    private void btnClientes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnClientes2ActionPerformed
+    private void btnCliente_PrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliente_PrevActionPerformed
+        cliente.Paginador("Anterior");
+    }//GEN-LAST:event_btnCliente_PrevActionPerformed
 
-    private void btnClientes3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnClientes3ActionPerformed
+    private void btnCliente_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliente_NextActionPerformed
+        cliente.Paginador("Siguiente");
+    }//GEN-LAST:event_btnCliente_NextActionPerformed
 
-    private void btnClientes4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientes4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnClientes4ActionPerformed
+    private void btnCliente_LastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliente_LastActionPerformed
+        cliente.Paginador("Ultimo");
+    }//GEN-LAST:event_btnCliente_LastActionPerformed
+
+    private void spnClientes_PaginasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnClientes_PaginasStateChanged
+        cliente.Registro_Paginas();
+    }//GEN-LAST:event_spnClientes_PaginasStateChanged
+
+    private void tableClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableClientesKeyReleased
+        if (tableClientes.getSelectedRows().length > 0){
+            cliente.GetCliente();
+        }
+    }//GEN-LAST:event_tableClientesKeyReleased
+
+    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClientesMouseClicked
+        if (tableClientes.getSelectedRows().length > 0){
+            cliente.GetCliente();
+        }
+    }//GEN-LAST:event_tableClientesMouseClicked
     
     // </editor-fold>
     
@@ -735,11 +762,11 @@ public class Sistema extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
     private javax.swing.JButton btnClienteAdd;
+    private javax.swing.JButton btnCliente_First;
+    private javax.swing.JButton btnCliente_Last;
+    private javax.swing.JButton btnCliente_Next;
+    private javax.swing.JButton btnCliente_Prev;
     private javax.swing.JButton btnClientes;
-    private javax.swing.JButton btnClientes1;
-    private javax.swing.JButton btnClientes2;
-    private javax.swing.JButton btnClientes3;
-    private javax.swing.JButton btnClientes4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -752,10 +779,10 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelCliente_Paginas;
     private javax.swing.JLabel lblClienteApe;
     private javax.swing.JLabel lblClienteDir;
     private javax.swing.JLabel lblClienteDni;
@@ -763,11 +790,11 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel lblClienteNom;
     private javax.swing.JLabel lblClienteTel;
     private javax.swing.JLabel lblClienteTel1;
-    private javax.swing.JLabel lblClienteTel2;
     private javax.swing.JLabel lblFotoCliente;
     private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlFotoCliente;
     private javax.swing.JPanel pnlVentas;
+    private javax.swing.JSpinner spnClientes_Paginas;
     private javax.swing.JTable tableClientes;
     private javax.swing.JTabbedPane tpnlPrincipal;
     private javax.swing.JTextField txtClienteApe;
