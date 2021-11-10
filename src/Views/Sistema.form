@@ -236,7 +236,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTabbedPane2" max="32767" attributes="0"/>
+                      <Component id="TabbedPaneCliente1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Component id="btnClienteAdd" min="-2" max="-2" attributes="0"/>
@@ -249,7 +249,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jTabbedPane2" min="-2" pref="366" max="-2" attributes="0"/>
+                          <Component id="TabbedPaneCliente1" min="-2" pref="366" max="-2" attributes="0"/>
                           <EmptySpace pref="24" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnClienteAdd" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -260,12 +260,15 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+                <Container class="javax.swing.JTabbedPane" name="TabbedPaneCliente1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="TabbedPaneCliente1StateChanged"/>
+                  </Events>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
@@ -577,8 +580,8 @@
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Pagos">
-                            <Property name="tabTitle" type="java.lang.String" value="Pagos"/>
+                          <JTabbedPaneConstraints tabName="Pagos y Reportes">
+                            <Property name="tabTitle" type="java.lang.String" value="Pagos y Reportes"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -643,7 +646,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                      <Component id="TabbedPaneCliente2" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -670,7 +673,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jTabbedPane1" min="-2" pref="367" max="-2" attributes="0"/>
+                          <Component id="TabbedPaneCliente2" min="-2" pref="367" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblClienteTel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -692,7 +695,10 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+                <Container class="javax.swing.JTabbedPane" name="TabbedPaneCliente2">
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="TabbedPaneCliente2StateChanged"/>
+                  </Events>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>

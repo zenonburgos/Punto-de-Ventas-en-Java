@@ -43,7 +43,7 @@ public class Sistema extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        TabbedPaneCliente1 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         pnlFotoCliente = new javax.swing.JPanel();
@@ -65,7 +65,7 @@ public class Sistema extends javax.swing.JFrame {
         btnClienteAdd = new javax.swing.JButton();
         txtClienteCancel = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        TabbedPaneCliente2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableClientes = tableClientes = new javax.swing.JTable(){
@@ -159,7 +159,12 @@ public class Sistema extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
+        TabbedPaneCliente1.setBackground(new java.awt.Color(255, 255, 255));
+        TabbedPaneCliente1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TabbedPaneCliente1StateChanged(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -305,7 +310,7 @@ public class Sistema extends javax.swing.JFrame {
         lblClienteTel1.setText("Teléfono");
         jPanel6.add(lblClienteTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
 
-        jTabbedPane2.addTab("Registro de clientes", jPanel6);
+        TabbedPaneCliente1.addTab("Registro de clientes", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -320,7 +325,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGap(0, 338, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Pagos", jPanel7);
+        TabbedPaneCliente1.addTab("Pagos y Reportes", jPanel7);
 
         btnClienteAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icons8_plus_+_24px.png"))); // NOI18N
         btnClienteAdd.setText("Agregar");
@@ -344,7 +349,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(TabbedPaneCliente1)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addComponent(btnClienteAdd)
@@ -355,7 +360,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TabbedPaneCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClienteAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,6 +369,12 @@ public class Sistema extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        TabbedPaneCliente2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TabbedPaneCliente2StateChanged(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -401,7 +412,7 @@ public class Sistema extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Lista de Clientes", jPanel3);
+        TabbedPaneCliente2.addTab("Lista de Clientes", jPanel3);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -416,7 +427,7 @@ public class Sistema extends javax.swing.JFrame {
             .addGap(0, 339, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Pagos y Reportes", jPanel8);
+        TabbedPaneCliente2.addTab("Pagos y Reportes", jPanel8);
 
         lblClienteTel.setBackground(new java.awt.Color(255, 255, 255));
         lblClienteTel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -471,7 +482,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(TabbedPaneCliente2)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,7 +504,7 @@ public class Sistema extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TabbedPaneCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblClienteTel)
@@ -721,6 +732,26 @@ public class Sistema extends javax.swing.JFrame {
             cliente.GetCliente();
         }
     }//GEN-LAST:event_tableClientesMouseClicked
+
+    private void TabbedPaneCliente1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente1StateChanged
+        if (TabbedPaneCliente1.getSelectedIndex() == 0){
+            if(TabbedPaneCliente2.getSelectedIndex() > 0){
+                TabbedPaneCliente2.setSelectedIndex(0);
+            }
+        }else{
+            TabbedPaneCliente2.setSelectedIndex(1);
+        }
+    }//GEN-LAST:event_TabbedPaneCliente1StateChanged
+
+    private void TabbedPaneCliente2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente2StateChanged
+        if (TabbedPaneCliente2.getSelectedIndex() == 0){
+            if(TabbedPaneCliente1.getSelectedIndex() > 0){
+                TabbedPaneCliente1.setSelectedIndex(0);
+            }
+        }else{
+            TabbedPaneCliente1.setSelectedIndex(1);
+        }
+    }//GEN-LAST:event_TabbedPaneCliente2StateChanged
     
     // </editor-fold>
     
@@ -761,6 +792,8 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CheckBoxCliente_Credito;
+    private javax.swing.JTabbedPane TabbedPaneCliente1;
+    private javax.swing.JTabbedPane TabbedPaneCliente2;
     private javax.swing.JButton btnClienteAdd;
     private javax.swing.JButton btnCliente_First;
     private javax.swing.JButton btnCliente_Last;
@@ -779,8 +812,6 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelCliente_Paginas;
     private javax.swing.JLabel lblClienteApe;

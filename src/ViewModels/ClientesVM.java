@@ -119,15 +119,41 @@ public class ClientesVM extends Consult {
                                                     if (listEmail.get(0).getID() == _idCliente
                                                             && listDNI.get(0).getID() == _idCliente) {
                                                         SaveData();
-                                                    }else{
-                                                        if(listDNI.get(0).getID() != _idCliente){
-                                                            _label.get(0).setText("El DNI ya esta registrado");
+                                                    } else {
+                                                        if (listDNI.get(0).getID() != _idCliente) {
+                                                            _label.get(0).setText("El DNI ya está registrado");
                                                             _label.get(0).setForeground(Color.red);
                                                             _textField.get(0).requestFocus();
                                                         }
+                                                        if (listEmail.get(0).getID() != _idCliente) {
+                                                            _label.get(3).setText("El email ya está registrado");
+                                                            _label.get(3).setForeground(Color.red);
+                                                            _textField.get(3).requestFocus();
+                                                        }
                                                     }
                                                 } else {
-
+                                                    if (count == 0) {
+                                                        SaveData();
+                                                    } else {
+                                                        if (!listDNI.isEmpty()) {
+                                                            if (listDNI.get(0).getID() == _idCliente) {
+                                                                SaveData();
+                                                            } else {
+                                                                _label.get(0).setText("El DNI ya está registrado");
+                                                                _label.get(0).setForeground(Color.red);
+                                                                _textField.get(0).requestFocus();
+                                                            }
+                                                        }
+                                                        if (!listEmail.isEmpty()) {
+                                                            if (listEmail.get(0).getID() == _idCliente) {
+                                                                SaveData();
+                                                            } else {
+                                                                _label.get(3).setText("El email ya está registrado");
+                                                                _label.get(3).setForeground(Color.red);
+                                                                _textField.get(3).requestFocus();
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                                 break;
                                         }
@@ -151,32 +177,51 @@ public class ClientesVM extends Consult {
             if (image == null) {
                 image = Objetos.uploadImage.getTransFoto(_label.get(6));
             }
+            switch (_accion) {
+                case "insert":
+                    String sqlCliente1 = "INSERT INTO tclientes(Nid, Nombre, Apellido, Email,"
+                            + " Telefono, Direccion, Credito, Fecha, Imagen) VALUES (?,?,?,?,?,?,?,?,?)";
+                    Object[] dataCliente1 = {
+                        _textField.get(0).getText(),
+                        _textField.get(1).getText(),
+                        _textField.get(2).getText(),
+                        _textField.get(3).getText(),
+                        _textField.get(4).getText(),
+                        _textField.get(5).getText(),
+                        _checkBoxCredito.isSelected(),
+                        new Calendario().getFecha(),
+                        image,};
+                    qr.insert(getConn(), sqlCliente1, new ColumnListHandler(), dataCliente1);
+                    String sqlReport = "INSERT INTO treportes_clientes(DeudaActual, FechaDeuda, UltimoPago, FechaPago,"
+                            + " Ticket, FechaLimite, IdCliente) VALUES (?,?,?,?,?,?,?)";
+                    List<TClientes> cliente = clientes();
+                    Object[] dataReport = {
+                        0,
+                        "--/--/--",
+                        0,
+                        "--/--/--",
+                        "0000000000",
+                        "--/--/--",
+                        cliente.get(cliente.size() - 1).getID(),};
+                    qr.insert(getConn(), sqlReport, new ColumnListHandler(), dataReport);
+                    break;
+                case "update":
+                    Object[] dataCliente2 = {
+                        _textField.get(0).getText(),
+                        _textField.get(1).getText(),
+                        _textField.get(2).getText(),
+                        _textField.get(3).getText(),
+                        _textField.get(4).getText(),
+                        _textField.get(5).getText(),
+                        _checkBoxCredito.isSelected(),
+                        image,
+                    };
+                    String sqlCliente2 = "UPDATE tclientes SET Nid = ?, Nombre = ?, Apellido = ?, Email = ?,"
+                        + " Telefono = ?, Direccion = ?, Credito = ?, Imagen = ? WHERE ID =" + _idCliente;
+                    qr.update(getConn(), sqlCliente2, dataCliente2);
+                    break;
+            }
 
-            String sqlCliente = "INSERT INTO tclientes(Nid, Nombre, Apellido, Email,"
-                    + " Telefono, Direccion, Credito, Fecha, Imagen) VALUES (?,?,?,?,?,?,?,?,?)";
-            Object[] dataCliente = {
-                _textField.get(0).getText(),
-                _textField.get(1).getText(),
-                _textField.get(2).getText(),
-                _textField.get(3).getText(),
-                _textField.get(4).getText(),
-                _textField.get(5).getText(),
-                _checkBoxCredito.isSelected(),
-                new Calendario().getFecha(),
-                image,};
-            qr.insert(getConn(), sqlCliente, new ColumnListHandler(), dataCliente);
-            String sqlReport = "INSERT INTO treportes_clientes(DeudaActual, FechaDeuda, UltimoPago, FechaPago,"
-                    + " Ticket, FechaLimite, IdCliente) VALUES (?,?,?,?,?,?,?)";
-            List<TClientes> cliente = clientes();
-            Object[] dataReport = {
-                0,
-                "--/--/--",
-                0,
-                "--/--/--",
-                "0000000000",
-                "--/--/--",
-                cliente.get(cliente.size() - 1).getID(),};
-            qr.insert(getConn(), sqlReport, new ColumnListHandler(), dataReport);
             getConn().commit();
             restablecer();
 //        } 
