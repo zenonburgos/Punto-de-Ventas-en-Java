@@ -94,11 +94,12 @@ public class ClientesVM extends Consult {
                                             .filter(u -> u.getNid().equals(_textField.get(0).getText()))
                                             .collect(Collectors.toList());
                                     count += listDNI.size();
-                                    switch (_accion) {
-                                        case "insert":
-                                            try {
+                                    try {
+                                        switch (_accion) {
+                                            case "insert":
+
                                                 if (count == 0) {
-                                                    Insert();
+                                                    SaveData();
                                                 } else {
                                                     if (!listEmail.isEmpty()) {
                                                         _label.get(3).setText("El Email ya está registrado");
@@ -111,10 +112,27 @@ public class ClientesVM extends Consult {
                                                         _textField.get(0).requestFocus();
                                                     }
                                                 }
-                                            } catch (SQLException ex) {
-                                                JOptionPane.showMessageDialog(null, ex);
-                                            }
-                                            break;
+
+                                                break;
+                                            case "update":
+                                                if (count == 2) {
+                                                    if (listEmail.get(0).getID() == _idCliente
+                                                            && listDNI.get(0).getID() == _idCliente) {
+                                                        SaveData();
+                                                    }else{
+                                                        if(listDNI.get(0).getID() != _idCliente){
+                                                            _label.get(0).setText("El DNI ya esta registrado");
+                                                            _label.get(0).setForeground(Color.red);
+                                                            _textField.get(0).requestFocus();
+                                                        }
+                                                    }
+                                                } else {
+
+                                                }
+                                                break;
+                                        }
+                                    } catch (SQLException ex) {
+                                        JOptionPane.showMessageDialog(null, ex);
                                     }
                                 }
                             }
@@ -125,7 +143,7 @@ public class ClientesVM extends Consult {
         }
     }
 
-    private void Insert() throws SQLException {
+    private void SaveData() throws SQLException {
         try {
             final QueryRunner qr = new QueryRunner(true);
             getConn().setAutoCommit(false);
@@ -211,10 +229,8 @@ public class ClientesVM extends Consult {
         _tableCliente.getColumnModel().getColumn(8).setPreferredWidth(0);
         _tableCliente.getColumnModel().getColumn(7).setCellRenderer(new Render_CheckBox());
     }
-    
 
-    
-    public final void GetCliente(){
+    public final void GetCliente() {
         _accion = "update";
         int filas = _tableCliente.getSelectedRow();
         _idCliente = (Integer) modelo1.getValueAt(filas, 0);
@@ -227,7 +243,7 @@ public class ClientesVM extends Consult {
         _checkBoxCredito.setSelected((Boolean) modelo1.getValueAt(filas, 7));
         Objetos.uploadImage.byteImage(_label.get(6), (byte[]) modelo1.getValueAt(filas, 8));
     }
-    
+
     public final void restablecer() {
         seccion = 1;
         _accion = "insert";
@@ -318,11 +334,12 @@ public class ClientesVM extends Consult {
                 break;
         }
     }
-    public void Registro_Paginas(){
+
+    public void Registro_Paginas() {
         _num_pagina = 1;
         Number caja = (Number) _spinnerPaginas.getValue();
         _reg_por_pagina = caja.intValue();
-        
+
         if (!listClientes.isEmpty()) {
             _paginadorClientes = new Paginador<>(listClientes,
                     _label.get(7), _reg_por_pagina);
